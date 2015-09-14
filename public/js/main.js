@@ -1,18 +1,7 @@
 function sendData() {
   console.log("HI");
-
-  function callback(response) {
-    console.log(response);
-  };
-
-  $.ajax("/user", {
-		method: "POST",
-		data: user,
-		dataType: "json"
-	}).done(callback);
+  $.post("/user", {name: "Jeff"})
 };
-
-var user = {"name": "Jeff"};
 
 $(".loginButton").click(sendData);
 

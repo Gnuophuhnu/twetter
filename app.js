@@ -8,8 +8,7 @@ app.locals.currentUser = "";
 // var username = req.params.user;
 
 app.use(express.static(__dirname + "/public"));
-app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 
 // app.get("/", function (req, res) {
 //   res.sendfile("public/index.html");
@@ -23,6 +22,12 @@ app.post("/user", function (req, res) {
   console.log("Hello");
   console.log(req.body);
   // app.locals.currentUser = req.body;
+});
+
+app.post("/user2", function (req, res) {
+  console.log("Hola");
+  console.log(req.body);
+  res.end();
 });
 
 var server = app.listen(3000, function () {
