@@ -1,0 +1,24 @@
+* {
+   box-sizing: border-box;
+}
+
+body {
+   background: gray;
+}
+
+#user {
+   width: 95%;
+   margin: 15px auto;
+   padding: 15px;
+   background: white;
+}
+.fields, .submit {
+   width: 95%;
+   margin: 0 auto;
+}
+input {
+   width: 100%;
+   margin: 10px auto;
+   padding: 10px;
+
+}
