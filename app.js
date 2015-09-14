@@ -22,6 +22,10 @@ app.post("/feed", function (req, res) {
   res.sendfile("public/all.html");
 });
 
+app.get("/feed", function (req, res) {
+  res.sendfile("public/all.html");
+});
+
 // output all the cookies to the browser
 app.get("/cookies", function(req, res) {
   // req.cookies.flavor = "oreo";
