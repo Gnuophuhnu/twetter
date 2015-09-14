@@ -2,12 +2,13 @@ var express = require("express");
 var cookieParser = require("cookie-parser");
 var bodyParser = require('body-parser');
 var app = express();
+app.use(express.static('public'));
 app.use(bodyParser.json()); // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 
 app.get("/", function (req, res) {
-  res.sendfile("public/login.html");
+  res.sendfile("public/index.html");
 });
 
 // The destination of the login form
