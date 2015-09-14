@@ -1,8 +1,28 @@
 var express = require("express");
 var app = express();
+var bodyParser = require("body-parser");
 
-app.get("/", function (req, res) {
-  res.sendfile("public/index.html");
+app.locals.users = [];
+app.locals.currentUser = "";
+// req.app.locals.users.push(username);
+// var username = req.params.user;
+
+app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
+
+// app.get("/", function (req, res) {
+//   res.sendfile("public/index.html");
+// });
+
+app.get("/login", function (req, res) {
+  res.sendfile("public/login.html");
+});
+
+app.post("/user", function (req, res) {
+  console.log("Hello");
+  console.log(req.body);
+  // app.locals.currentUser = req.body;
 });
 
 var server = app.listen(3000, function () {
