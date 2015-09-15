@@ -22,7 +22,7 @@ app.get("/locals", function(req, res) {
 
 // The destination of the login form
 app.post("/feed", function (req, res) {
-  req.cookies.currentUser = req.body.username;
+  req.cookies.currentUser = req.body.name;
   console.log("The current user is: " + req.cookies.currentUser);
   res.sendfile("public/all.html");
 });
